@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { Container } from "./styles/Container";
 // COMPONENTS
 import Navbar from "./components/Navbar";
+import Content from './components/Content';
 
 const theme = {
   'Orange': 'hsl(26, 100%, 55%)',
@@ -24,6 +25,7 @@ function App() {
       <GlobalStyle />
       <Container>
         <Navbar />
+        <Content />
       </Container>
     </ThemeProvider>
   );
