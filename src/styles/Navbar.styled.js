@@ -48,18 +48,34 @@ export const Links = styled.ul`
 `;
 
 export const CartSection = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 export const Cart = styled.button`
+  position: relative;
   border: none;
   background-color: unset;
 
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const ItemCounter = styled.div`
+  visibility: hidden;
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  padding: 1px 7px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 10px;
+  text-align: center;
+  background-color: ${({ theme }) => theme['Orange']};
+  border-radius: 10px;
 `;
 
 export const Avatar = styled.img`

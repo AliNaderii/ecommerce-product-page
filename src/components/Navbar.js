@@ -1,5 +1,7 @@
 // STYLES
-import { StyledNavbar, LinksSection, Logo, Links, CartSection, Cart, Avatar } from "../styles/Navbar.styled";
+import { StyledNavbar, LinksSection, Logo, Links, CartSection, Cart, Avatar, ItemCounter } from "../styles/Navbar.styled";
+// COMPONENTS
+import CartItems from "./CartItems";
 
 export default function Navbar() {
   return (
@@ -27,8 +29,10 @@ export default function Navbar() {
       <CartSection>
         <Cart aria-label="shopping cart">
           <img src="./images/icon-cart.svg" alt="shopping cart" />
+          <ItemCounter><p>3</p></ItemCounter>
         </Cart>
         <Avatar src='./images/image-avatar.png' />
+        <CartItems />
       </CartSection>
     </StyledNavbar>
   );

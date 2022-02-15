@@ -31,6 +31,10 @@ const GlobalStyle = createGlobalStyle`
   button {
     border: none;
     background-color: unset;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
 `;
