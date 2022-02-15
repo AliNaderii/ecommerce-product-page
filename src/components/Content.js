@@ -4,10 +4,10 @@ import Details from "./Details";
 // STYLES
 import { StyledContent } from '../styles/Content.styled';
 
-export default function Content() {
+export default function Content({ images }) {
   return (
     <StyledContent>
-      <Images />
+      <Images images={ images } />
       <Details />
     </StyledContent>
   );

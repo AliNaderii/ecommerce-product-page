@@ -7,6 +7,23 @@ import { Container } from "./styles/Container";
 // COMPONENTS
 import Navbar from "./components/Navbar";
 import Content from './components/Content';
+import Modal from './components/Modal';
+import { useState } from "react";
+
+const imageSource = {
+  thumbs: [
+    'image-product-1-thumbnail.jpg',
+    'image-product-2-thumbnail.jpg',
+    'image-product-3-thumbnail.jpg',
+    'image-product-4-thumbnail.jpg'
+  ],
+  products: [
+    'image-product-1.jpg',
+    'image-product-2.jpg',
+    'image-product-3.jpg',
+    'image-product-4.jpg'
+  ]
+};
 
 const theme = {
   'Orange': 'hsl(26, 100%, 55%)',
@@ -20,12 +37,19 @@ const theme = {
 };
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(prevstate => !prevstate);
+  };
+
   return (
     <ThemeProvider theme={ theme }>
       <GlobalStyle />
       <Container>
         <Navbar />
-        <Content />
+        <Content images={ imageSource } />
+        { showModal && <Modal images={ imageSource } toggle={ toggleModal } /> }
       </Container>
     </ThemeProvider>
   );

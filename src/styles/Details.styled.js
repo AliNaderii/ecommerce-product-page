@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledDetails = styled.section`
   margin: 0 auto;
   padding-top: 25px;
+  width: 100%;
 
   p {
     color: ${({ theme }) => theme['Orange']};
@@ -14,7 +15,7 @@ export const Description = styled.div`
   margin-top: 20px;
 
   h2 {
-    font-size: 36px;
+    font-size: 2.2em;
     line-height: 1.2;
   }
   p {
@@ -29,7 +30,7 @@ export const PriceTag = styled.div`
   p {
     display: flex;
     align-items: center;
-    font-size: 28px;
+    font-size: 1.8em;
     font-weight: 700;
     color: ${({ theme }) => theme['Very dark blue']};
 
