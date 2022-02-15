@@ -28,6 +28,11 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: none;
   }
 
+  button {
+    border: none;
+    background-color: unset;
+  }
+
 `;
 
 export default GlobalStyle;

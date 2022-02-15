@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 // APP CONTAINER
-export const Container = styled.main`
-  width: 1440px;
+export const Container = styled.div`
   margin: 0 auto;
 `;
