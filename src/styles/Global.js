@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     font-family: 'Kumbh Sans', sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.7;
   }
 

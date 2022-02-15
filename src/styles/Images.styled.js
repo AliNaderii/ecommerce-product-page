@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const StyledImages = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   width: 100%;
 `;
 
 export const Product = styled.img`
-  width: 100%;
+  width: 425px;
   max-height: 75%;
   border-radius: 20px;
 `;
