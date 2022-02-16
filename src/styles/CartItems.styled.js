@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { AddToCart } from "./Details.styled";
 
 export const StyledCartItems = styled.div`
-  visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

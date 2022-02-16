@@ -65,7 +65,6 @@ export const Cart = styled.button`
 `;
 
 export const ItemCounter = styled.div`
-  visibility: hidden;
   position: absolute;
   top: -7px;
   right: -10px;
