@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar";
 import Content from './components/Content';
 import Modal from './components/Modal';
 import { useState } from "react";
+// CONTEXT HOOK
+import { CartContextProvider } from "./context/CartContext";
 
 const imageSource = {
   thumbs: [
@@ -46,11 +48,13 @@ function App() {
   return (
     <ThemeProvider theme={ theme }>
       <GlobalStyle />
-      <Container>
-        <Navbar />
-        <Content images={ imageSource } />
-        { showModal && <Modal images={ imageSource } toggle={ toggleModal } /> }
-      </Container>
+      <CartContextProvider>
+        <Container>
+          <Navbar />
+          <Content images={ imageSource } />
+          { showModal && <Modal images={ imageSource } toggle={ toggleModal } /> }
+        </Container>
+      </CartContextProvider>
     </ThemeProvider>
   );
 }

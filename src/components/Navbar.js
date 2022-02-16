@@ -1,9 +1,20 @@
+// TOOLS
+import { useState } from "react";
+// CONTEXT HOOK
+import { useCartContext } from "../hooks/useCartContext";
 // STYLES
 import { StyledNavbar, LinksSection, Logo, Links, CartSection, Cart, Avatar, ItemCounter } from "../styles/Navbar.styled";
 // COMPONENTS
 import CartItems from "./CartItems";
 
 export default function Navbar() {
+  const [toggleCartItems, setToggleCartItems] = useState(false);
+  const { state } = useCartContext();
+
+  const showCartItems = () => {
+    setToggleCartItems(prevstate => !prevstate);
+  };
+
   return (
     <StyledNavbar>
       <LinksSection>
@@ -27,12 +38,12 @@ export default function Navbar() {
         </Links>
       </LinksSection>
       <CartSection>
-        <Cart aria-label="shopping cart">
+        <Cart aria-label="shopping cart" onClick={ showCartItems }>
           <img src="./images/icon-cart.svg" alt="shopping cart" />
-          <ItemCounter><p>3</p></ItemCounter>
+          { state.qty !== 0 && <ItemCounter><p>{ state.qty }</p></ItemCounter> }
         </Cart>
         <Avatar src='./images/image-avatar.png' />
-        <CartItems />
+        { toggleCartItems && <CartItems /> }
       </CartSection>
     </StyledNavbar>
   );
