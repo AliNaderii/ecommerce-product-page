@@ -12,6 +12,10 @@ export const StyledLightbox = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme['Black']};
   z-index: 1;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: none;
+  }
 `;
 
 export const ImageContainer = styled.section`

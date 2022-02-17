@@ -3,39 +3,35 @@ import { useState } from "react";
 // CONTEXT HOOK
 import { useCartContext } from "../hooks/useCartContext";
 // STYLES
-import { StyledNavbar, LinksSection, Logo, Links, CartSection, Cart, Avatar, ItemCounter } from "../styles/Navbar.styled";
+import { StyledNavbar, LinksSection, Logo, StyledLinks, CartSection, Cart, Avatar, ItemCounter, MenuIcon, SideMenu, CloseButton } from "../styles/Navbar.styled";
 // COMPONENTS
 import CartItems from "./CartItems";
+import Links from './Links';
 
 export default function Navbar() {
   const [toggleCartItems, setToggleCartItems] = useState(false);
+  const [showSideMenu, setShowSideMenu] = useState(false);
   const { state } = useCartContext();
 
   const showCartItems = () => {
     setToggleCartItems(prevstate => !prevstate);
   };
 
+  const toggleSideMenu = () => {
+    setShowSideMenu(!showSideMenu);
+  };
+
   return (
     <StyledNavbar>
       <LinksSection>
-        <Logo><h1>sneakers</h1></Logo>
-        <Links>
-          <li>
-            <a href="#">Collections</a>
-          </li>
-          <li>
-            <a href="#">Men</a>
-          </li>
-          <li>
-            <a href="#">Women</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </Links>
+        <MenuIcon aria-label='menu icon' onClick={ toggleSideMenu }>
+          <img src="./images/icon-menu.svg" alt="menu icon" />
+        </MenuIcon>
+        <Logo>
+          <h1>sneakers</h1></Logo>
+        <StyledLinks>
+          <Links />
+        </StyledLinks>
       </LinksSection>
       <CartSection>
         <Cart aria-label="shopping cart" onClick={ showCartItems }>
@@ -45,6 +41,14 @@ export default function Navbar() {
         <Avatar src='./images/image-avatar.png' />
         { toggleCartItems && <CartItems /> }
       </CartSection>
+      { showSideMenu &&
+        <SideMenu>
+          <CloseButton onClick={ toggleSideMenu }>
+            <img src="./images/icon-close.svg" alt="close icon" />
+          </CloseButton>
+          <Links />
+        </SideMenu>
+      }
     </StyledNavbar>
   );
 }

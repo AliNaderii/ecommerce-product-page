@@ -1,19 +1,38 @@
 // TOOLS
-import { StyledImages, Product, Thumbnails, Thumb } from "../styles/Images.styled";
+import { StyledImages, Product, Thumbnails, Thumb, PrevButton, NextButton } from "../styles/Images.styled";
+
 import { useState } from "react";
 
 export default function Images({ images, toggleLightbox }) {
-  const [product, setProduct] = useState(`${images[0].product}`);
+  const productImageSource = images.map(image => image.product);
+  const [id, setId] = useState(0);
   const [activeId, setActiveId] = useState();
 
-  const changeSrc = (src, id) => {
+  const changeSrc = (id) => {
     setActiveId(id);
-    setProduct(src);
+    setId(id - 1);
+  };
+
+  const nextProductImage = () => {
+    setId(prevstate => prevstate === productImageSource.length - 1 ? 0 : prevstate + 1);
+  };
+
+  const prevProductImage = () => {
+    setId(prevstate => prevstate === 0 ? productImageSource.length - 1 : prevstate - 1);
   };
 
   return (
     <StyledImages>
-      <Product src={ product } onClick={ toggleLightbox } />
+      <Product onClick={ toggleLightbox }>
+        <img src={ productImageSource[id] } alt="product" />
+        <PrevButton onClick={ prevProductImage } aria-label='prev button'>
+          <img src="./images/icon-previous.svg" alt="previous icon" />
+        </PrevButton>
+
+        <NextButton onClick={ nextProductImage } aria-label='next button'>
+          <img src='./images/icon-next.svg' alt='next icon' />
+        </NextButton>
+      </Product>
       <Thumbnails>
         { images.map((image, index) => (
           <Thumb key={ image.id }>
@@ -21,7 +40,7 @@ export default function Images({ images, toggleLightbox }) {
               src={ image.thumb }
               alt="thumbnail"
               key={ index }
-              onClick={ () => changeSrc(image.product, image.id) }
+              onClick={ () => changeSrc(image.id) }
             />
             {
               activeId === image.id &&
