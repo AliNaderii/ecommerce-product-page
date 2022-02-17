@@ -46,6 +46,8 @@ const theme = {
   'Light grayish blue': 'hsl(223, 64%, 98%)',
   'White': 'hsl(0, 0%, 100%)',
   'Black': 'rgba(0, 0, 0, 0.75)',
+
+  mobile: '375px'
 };
 
 function App() {

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { PreviousIcon, NextIcon } from "../styles/Lightbox.styled";
+
 
 export const StyledImages = styled.section`
   display: flex;
@@ -9,19 +11,62 @@ export const StyledImages = styled.section`
   width: 100%;
 `;
 
-export const Product = styled.img`
-  width: 425px;
-  max-height: 75%;
-  border-radius: 20px;
+export const Product = styled.div`
   cursor: pointer;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 90%;
+    border-radius: 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    img {
+      border-radius: unset;
+    }
+  }
+`;
+
+export const PrevButton = styled(PreviousIcon)`
+  display: none;
+  left: 0;
+  margin-left: 15px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: block;
+  }
+`;
+
+export const NextButton = styled(NextIcon)`
+  display: none;
+  right: 0;
+  margin-right: 15px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: block;
+  }
 `;
 
 export const Thumbnails = styled.div`
-  margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
-  gap: 10px;
+  gap: 5px;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: none;
+  }
 `;
 
 export const Thumb = styled.div`

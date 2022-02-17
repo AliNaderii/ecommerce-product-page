@@ -4,6 +4,10 @@ export const StyledDetails = styled.section`
   margin: 0 auto;
   padding-top: 25px;
   width: 100%;
+  
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    padding: 25px 20px;
+  }
 
   p {
     color: ${({ theme }) => theme['Orange']};
@@ -23,6 +27,16 @@ export const Description = styled.div`
     margin: 30px 0 20px 0;
 
     font-weight: 400;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    h2 {
+      font-size: 2em;
+    }
+
+    p {
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -52,6 +66,11 @@ export const PriceTag = styled.div`
       text-decoration: line-through;
     }
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const ActionButtons = styled.div`
@@ -60,6 +79,12 @@ export const ActionButtons = styled.div`
   gap: 10px;
   margin-top: 35px;
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const Counter = styled.div`
@@ -71,8 +96,17 @@ export const Counter = styled.div`
   border-radius: 10px;
   font-weight: 700;
 
+  button:nth-child(1) {
+      transform: translateY(-2px);
+    }
+
   button:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    justify-content: space-between;
+    padding: 10px 20px;
   }
 `;
 

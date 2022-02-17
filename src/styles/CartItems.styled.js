@@ -17,6 +17,12 @@ export const StyledCartItems = styled.div`
   border-radius: 10px;
   height: fit-content;
   width: 320px;
+  z-index: 1;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    margin: 0 30px;
+    top: 60px;
+  }
 `;
 
 export const Title = styled.div`
