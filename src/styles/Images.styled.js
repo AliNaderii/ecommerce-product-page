@@ -13,6 +13,7 @@ export const Product = styled.img`
   width: 425px;
   max-height: 75%;
   border-radius: 20px;
+  cursor: pointer;
 `;
 
 export const Thumbnails = styled.div`
@@ -21,10 +22,13 @@ export const Thumbnails = styled.div`
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   gap: 10px;
+`;
 
+export const Thumb = styled.div`
+  position: relative;
   img {
     width: 100px;
-    height: 100px;
+    height: 100%;
     border-radius: 20px;
 
     &:hover {
@@ -32,4 +36,18 @@ export const Thumbnails = styled.div`
       opacity: 0.6;
     }
   }
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 3px solid ${({ theme }) => theme['Orange']};
+    overflow: hidden;
+    border-radius: 20px;
+
+  }
 `;
+

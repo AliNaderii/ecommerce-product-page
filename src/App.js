@@ -7,23 +7,33 @@ import { Container } from "./styles/Container";
 // COMPONENTS
 import Navbar from "./components/Navbar";
 import Content from './components/Content';
-import Modal from './components/Modal';
+import Lightbox from './components/Lightbox';
 import { useState } from "react";
 // CONTEXT HOOK
 import { CartContextProvider } from "./context/CartContext";
 
 const imageSource = {
-  thumbs: [
-    'image-product-1-thumbnail.jpg',
-    'image-product-2-thumbnail.jpg',
-    'image-product-3-thumbnail.jpg',
-    'image-product-4-thumbnail.jpg'
-  ],
-  products: [
-    'image-product-1.jpg',
-    'image-product-2.jpg',
-    'image-product-3.jpg',
-    'image-product-4.jpg'
+  images: [
+    {
+      product: './images/image-product-1.jpg',
+      thumb: './images/image-product-1-thumbnail.jpg',
+      id: 1
+    },
+    {
+      product: './images/image-product-2.jpg',
+      thumb: './images/image-product-2-thumbnail.jpg',
+      id: 2
+    },
+    {
+      product: './images/image-product-3.jpg',
+      thumb: './images/image-product-3-thumbnail.jpg',
+      id: 3
+    },
+    {
+      product: './images/image-product-4.jpg',
+      thumb: './images/image-product-4-thumbnail.jpg',
+      id: 4
+    }
   ]
 };
 
@@ -39,10 +49,10 @@ const theme = {
 };
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
+  const [showLightbox, setShowLightbox] = useState(false);
 
-  const toggleModal = () => {
-    setShowModal(prevstate => !prevstate);
+  const toggleLightbox = () => {
+    setShowLightbox(!showLightbox);
   };
 
   return (
@@ -51,8 +61,8 @@ function App() {
       <CartContextProvider>
         <Container>
           <Navbar />
-          <Content images={ imageSource } />
-          { showModal && <Modal images={ imageSource } toggle={ toggleModal } /> }
+          <Content imageSource={ imageSource } toggleLightbox={ toggleLightbox } showLightbox={ showLightbox } />
+          { showLightbox && <Lightbox images={ imageSource.images } toggle={ toggleLightbox } /> }
         </Container>
       </CartContextProvider>
     </ThemeProvider>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledModal = styled.div`
+export const StyledLightbox = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -38,16 +38,32 @@ export const Thumbnails = styled.div`
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   gap: 10px;
+`;
 
+export const Thumb = styled.div`
+  position: relative;
+  
   img {
     width: 100px;
-    height: 100px;
+    height: 100%;
     border-radius: 20px;
 
     &:hover {
       cursor: pointer;
-      opacity:0.5;
+      opacity: 0.6;
     }
+  }
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 3px solid ${({ theme }) => theme['Orange']};
+    overflow: hidden;
+    border-radius: 20px;
   }
 `;
 

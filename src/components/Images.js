@@ -1,21 +1,35 @@
 // TOOLS
-import { StyledImages, Product, Thumbnails } from "../styles/Images.styled";
+import { StyledImages, Product, Thumbnails, Thumb } from "../styles/Images.styled";
+import { useState } from "react";
 
-const thumbSource = [
-  'image-product-1-thumbnail.jpg',
-  'image-product-2-thumbnail.jpg',
-  'image-product-3-thumbnail.jpg',
-  'image-product-4-thumbnail.jpg',
-];
+export default function Images({ images, toggleLightbox }) {
+  const [product, setProduct] = useState(`${images[0].product}`);
+  const [activeId, setActiveId] = useState();
 
-export default function Images() {
+  const changeSrc = (src, id) => {
+    setActiveId(id);
+    setProduct(src);
+  };
+
   return (
     <StyledImages>
-      <Product src="./images/image-product-1.jpg" />
+      <Product src={ product } onClick={ toggleLightbox } />
       <Thumbnails>
-        { thumbSource.map(thumb => (
-          <img src={ `./images/${thumb}` } alt="thumbnail" key={ thumb } />
-        )) }
+        { images.map((image, index) => (
+          <Thumb key={ image.id }>
+            <img
+              src={ image.thumb }
+              alt="thumbnail"
+              key={ index }
+              onClick={ () => changeSrc(image.product, image.id) }
+            />
+            {
+              activeId === image.id &&
+              <div key={ image.id }></div>
+            }
+          </Thumb>
+        ))
+        }
       </Thumbnails>
     </StyledImages>
   );
