@@ -30,7 +30,7 @@ export default function CartItems() {
                 $125.00 x { state.qty } <span>{ `$${125 * state.qty}.00` }</span>
               </p>
               <IconContainer aria-label="delete button" onClick={ emptyCart }>
-                <DeleteIcon alt="delete icon" />
+                <DeleteIcon />
               </IconContainer>
             </div>
           </Summary>

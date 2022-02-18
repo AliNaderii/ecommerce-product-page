@@ -36,11 +36,11 @@ export default function Images({ images, toggleLightbox }) {
       <Product onClick={ toggleLightbox }>
         <img src={ productImageSource[id] } alt="product" />
         <PrevButton onClick={ prevProductImage } aria-label='prev button'>
-          <PrevIcon alt="previous icon" />
+          <PrevIcon />
         </PrevButton>
 
         <NextButton onClick={ nextProductImage } aria-label='next button'>
-          <NextIcon alt='next icon' />
+          <NextIcon />
         </NextButton>
       </Product>
 

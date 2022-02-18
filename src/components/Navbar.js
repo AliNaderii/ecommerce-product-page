@@ -49,11 +49,11 @@ export default function Navbar() {
       {/* CART SECTION */ }
       <CartSection>
         <Cart aria-label="shopping cart" onClick={ toggleCartItems }>
-          <CartIcon alt="shopping cart" />
+          <CartIcon />
           { state.qty !== 0 && <ItemCounter><p>{ state.qty }</p></ItemCounter> }
         </Cart>
 
-        <Avatar src='./images/image-avatar.png' />
+        <Avatar src='./images/image-avatar.png' alt='user avatar' />
 
         { showCartItems && <CartItems /> }
       </CartSection>
@@ -61,8 +61,8 @@ export default function Navbar() {
       {/* SIDE MENU */ }
       { showSideMenu &&
         <SideMenu>
-          <CloseButton onClick={ toggleSideMenu }>
-            <CloseIcon alt="close icon" />
+          <CloseButton onClick={ toggleSideMenu } aria-label='close icon'>
+            <CloseIcon />
           </CloseButton>
           <Links />
         </SideMenu>

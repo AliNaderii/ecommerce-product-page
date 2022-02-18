@@ -39,15 +39,15 @@ export default function Lightbox({ images, toggle }) {
           <img src={ productImageSrc[id] } alt='product' />
 
           <CloseButton onClick={ toggle }>
-            <CloseIcon alt="colse icon" />
+            <CloseIcon />
           </CloseButton>
 
           <PrevButton onClick={ prevImage }>
-            <PrevIcon alt="previous icon" />
+            <PrevIcon />
           </PrevButton>
 
           <NextButton onClick={ nextImage }>
-            <NextIcon alt='next icon' />
+            <NextIcon />
           </NextButton>
         </Product>
 

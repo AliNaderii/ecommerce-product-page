@@ -45,16 +45,16 @@ export default function Details() {
       <ActionButtons>
         <Counter>
           <button aria-label="delete item" onClick={ decrementItem }>
-            <MinusIcon alt="delete item" />
+            <MinusIcon />
           </button>
           <span>{ state.cartItems }</span>
           <button aria-label="add item" onClick={ incrementItem }>
-            <PlusIcon alt="add item" />
+            <PlusIcon />
           </button>
         </Counter>
 
         <AddToCart aria-label="add to cart" onClick={ addItems }>
-          <CartIcon alt="add to cart" />
+          <CartIcon />
           <span>Add to cart</span>
         </AddToCart>
       </ActionButtons>
