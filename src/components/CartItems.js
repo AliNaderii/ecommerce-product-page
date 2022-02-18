@@ -4,13 +4,20 @@ import { useCartContext } from "../hooks/useCartContext";
 import { StyledCartItems, Title, Summary, DeleteIcon, CheckoutButton, EmptyCart } from "../styles/CartItems.styled";
 
 export default function CartItems() {
+  // CONTEXT CUSTOM HOOK
   const { state, dispatch } = useCartContext();
+
+  // DELETE ITEMS FROM CART
   const emptyCart = () => {
     dispatch({ type: 'DELETE_ITEMS' });
   };
+
   return (
     <StyledCartItems>
+      {/* CART HEADER */ }
       <Title><p>Cart</p></Title>
+
+      {/* CART DETAILS */ }
       { state.qty !== 0 && (
         <>
           <Summary>
@@ -28,6 +35,8 @@ export default function CartItems() {
           <CheckoutButton>Checkout</CheckoutButton>
         </>
       ) }
+
+      {/* WHEN CART IS EMPTY */ }
       { state.qty === 0 && <EmptyCart><p>Your cart is empty</p></EmptyCart> }
     </StyledCartItems>
   );

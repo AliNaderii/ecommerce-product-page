@@ -2,19 +2,19 @@ export default function Links() {
   return (
     <>
       <li>
-        <a href="#">Collections</a>
+        <a href="#hello">Collections</a>
       </li>
       <li>
-        <a href="#">Men</a>
+        <a href="#hello">Men</a>
       </li>
       <li>
-        <a href="#">Women</a>
+        <a href="#hello">Women</a>
       </li>
       <li>
-        <a href="#">About</a>
+        <a href="#hello">About</a>
       </li>
       <li>
-        <a href="#">Contact</a>
+        <a href="#hello">Contact</a>
       </li>
     </>
   );

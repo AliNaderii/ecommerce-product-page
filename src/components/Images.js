@@ -1,18 +1,25 @@
 // TOOLS
+import { useState } from "react";
+// STYLES
 import { StyledImages, Product, Thumbnails, Thumb, PrevButton, NextButton } from "../styles/Images.styled";
 
-import { useState } from "react";
-
 export default function Images({ images, toggleLightbox }) {
+  // ARRAY OF PRODUCT IMAGE SOURCES
   const productImageSource = images.map(image => image.product);
+
+  // ID FOR THE CURRENT PRODUCT IMAGE THAT IS BEING DESPLAYED
   const [id, setId] = useState(0);
+
+  // ACTIVE THUMBNAIL IMAGE
   const [activeId, setActiveId] = useState();
 
+  // CHANGE IMAGE WITH CLICKING ON THUMBS
   const changeSrc = (id) => {
     setActiveId(id);
     setId(id - 1);
   };
 
+  // PREVIOUS & NEXT IMAGE 
   const nextProductImage = () => {
     setId(prevstate => prevstate === productImageSource.length - 1 ? 0 : prevstate + 1);
   };
@@ -33,6 +40,7 @@ export default function Images({ images, toggleLightbox }) {
           <img src='./images/icon-next.svg' alt='next icon' />
         </NextButton>
       </Product>
+
       <Thumbnails>
         { images.map((image, index) => (
           <Thumb key={ image.id }>

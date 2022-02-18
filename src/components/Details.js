@@ -4,6 +4,7 @@ import { useCartContext } from '../hooks/useCartContext';
 import { StyledDetails, Description, PriceTag, ActionButtons, Counter, AddToCart } from "../styles/Details.styled";
 
 export default function Details() {
+  // CONTEXT CUSTOM HOOK
   const { state, dispatch } = useCartContext();
 
   // DECREMENT && INCREMENT ITEM FUNCTIONS
@@ -19,6 +20,7 @@ export default function Details() {
   const addItems = () => {
     dispatch({ type: 'ITEMS_ADDED', payload: state.cartItems });
   };
+
   return (
     <StyledDetails>
       <p>SNEAKER COMPANY</p>

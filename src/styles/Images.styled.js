@@ -1,7 +1,8 @@
 import styled from "styled-components";
+// STYLED COMPONENTS
 import { PreviousIcon, NextIcon } from "../styles/Lightbox.styled";
 
-
+// IMAGE SECTION CONTAINER
 export const StyledImages = styled.section`
   display: flex;
   flex-direction: column;
@@ -11,6 +12,7 @@ export const StyledImages = styled.section`
   width: 100%;
 `;
 
+// PRODUCT IMAGE
 export const Product = styled.div`
   cursor: pointer;
   position: relative;
@@ -21,6 +23,7 @@ export const Product = styled.div`
     border-radius: 20px;
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     img {
       border-radius: unset;
@@ -28,6 +31,7 @@ export const Product = styled.div`
   }
 `;
 
+// PREVIOUS BUTTON
 export const PrevButton = styled(PreviousIcon)`
   display: none;
   left: 0;
@@ -38,11 +42,13 @@ export const PrevButton = styled(PreviousIcon)`
     height: 20px;
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: block;
   }
 `;
 
+// NEXT BUTTON
 export const NextButton = styled(NextIcon)`
   display: none;
   right: 0;
@@ -53,22 +59,26 @@ export const NextButton = styled(NextIcon)`
     height: 20px;
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: block;
   }
 `;
 
+// THUMBNAILS SECTION CONTAINER
 export const Thumbnails = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   gap: 5px;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: none;
   }
 `;
 
+// THUMBNAILS
 export const Thumb = styled.div`
   position: relative;
   img {

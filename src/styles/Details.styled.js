@@ -1,20 +1,23 @@
 import styled from "styled-components";
 
+// ITEM DETAILS CONTAINER
 export const StyledDetails = styled.section`
   margin: 0 auto;
   padding-top: 25px;
   width: 100%;
-  
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    padding: 25px 20px;
-  }
 
   p {
     color: ${({ theme }) => theme['Orange']};
     font-weight: 700;
   }
+
+  /* MEDIA QUERY */
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    padding: 25px 20px;
+  }
 `;
 
+// ITEM DESCRIPTION
 export const Description = styled.div`
   margin-top: 20px;
 
@@ -29,6 +32,7 @@ export const Description = styled.div`
     font-weight: 400;
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     h2 {
       font-size: 2em;
@@ -40,6 +44,7 @@ export const Description = styled.div`
   }
 `;
 
+// ITEM PRICE TAG
 export const PriceTag = styled.div`
   p {
     display: flex;
@@ -67,12 +72,14 @@ export const PriceTag = styled.div`
     }
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: flex;
     justify-content: space-between;
   }
 `;
 
+// ACTION BUTTONS CONTAINER
 export const ActionButtons = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -80,6 +87,7 @@ export const ActionButtons = styled.div`
   margin-top: 35px;
   width: 100%;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -87,6 +95,7 @@ export const ActionButtons = styled.div`
   }
 `;
 
+// INCREMENT AND DECREMENT BUTTONS
 export const Counter = styled.div`
   display: flex;
   justify-content: space-around;
@@ -104,12 +113,14 @@ export const Counter = styled.div`
     cursor: pointer;
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     justify-content: space-between;
     padding: 10px 20px;
   }
 `;
 
+// ADD ITEMS TO CART BUTTON
 export const AddToCart = styled.button`
   justify-self: stretch;
   background-color: ${({ theme }) => theme['Orange']};

@@ -1,6 +1,8 @@
 import styled from "styled-components";
+// STYLED COMPONENTS
 import { CloseIcon } from "./Lightbox.styled";
 
+// NAVBAR SECTION CONTAINER
 export const StyledNavbar = styled.nav`
   width: 80%;
   height: 120px;
@@ -10,6 +12,7 @@ export const StyledNavbar = styled.nav`
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme['Grayish blue']};
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100vw;
     height: 75px;
@@ -18,23 +21,27 @@ export const StyledNavbar = styled.nav`
   }
 `;
 
+// LINKS SECTION CONTAINER
 export const LinksSection = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
 `;
 
+// HAMBURGER ICON
 export const MenuIcon = styled.button`
   display: none;
   height: 100%;
   width: 10%;
   margin: 0 15px;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: block;
   }
 `;
 
+// SIDE MENU
 export const SideMenu = styled.div`
   position: absolute;
   top: 0;
@@ -59,6 +66,7 @@ export const SideMenu = styled.div`
   }
 `;
 
+// CLOSE BUTTON
 export const CloseButton = styled(CloseIcon)`
   position: relative;
   margin-right: auto;
@@ -67,18 +75,18 @@ export const CloseButton = styled(CloseIcon)`
   left: -5px;
 `;
 
+// SITE LOGO
 export const Logo = styled.div`
   font-size: 24px;
   margin-bottom: 10px;
   color: ${({ theme }) => theme['Very dark blue']};
 `;
 
+// LINKS
 export const StyledLinks = styled.ul`
   margin-left: 35px;
   height: 100%;
 
-  
-  
   li {
     display: inline-block;
     margin: 0 20px;
@@ -98,22 +106,26 @@ export const StyledLinks = styled.ul`
     }
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: none;
   }
   `;
 
+// CART SECTION CONTAINER
 export const CartSection = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin-left: auto;
   }
 `;
 
+// CART ICON
 export const Cart = styled.button`
   position: relative;
   border: none;
@@ -123,11 +135,13 @@ export const Cart = styled.button`
     cursor: pointer;
   }
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin-right: 10px;
   }
 `;
 
+// ITEM COUNTER WHEN ADDING ITEMS TO CART
 export const ItemCounter = styled.div`
   position: absolute;
   top: -7px;
@@ -141,12 +155,14 @@ export const ItemCounter = styled.div`
   border-radius: 10px;
 `;
 
+// USER AVATAR
 export const Avatar = styled.img`
   height: 50px;
   width: 50px;
   border-radius: 50%;
   margin-left: 35px;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     height: 35px;
     width: 35px;

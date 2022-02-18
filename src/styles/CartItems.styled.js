@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { AddToCart } from "./Details.styled";
 
+// CART ITEMS CONTAINER
 export const StyledCartItems = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,12 +20,14 @@ export const StyledCartItems = styled.div`
   width: 320px;
   z-index: 1;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin: 0 30px;
     top: 60px;
   }
 `;
 
+// TITLE SECTION
 export const Title = styled.div`
   align-self: flex-start;
   width: 100%;
@@ -38,6 +41,7 @@ export const Title = styled.div`
   }
 `;
 
+// ITEM DETAILS SECTION
 export const Summary = styled.div`
   display: flex;
   justify-content: center;
@@ -66,6 +70,7 @@ export const Summary = styled.div`
   }
 `;
 
+// EMPTY CART ICON
 export const DeleteIcon = styled.button`
     img {
       width: 12px;
@@ -75,6 +80,7 @@ export const DeleteIcon = styled.button`
     }
 `;
 
+// CHECKOUT BUTTON
 export const CheckoutButton = styled(AddToCart)`
   display: block;
   color: #fff;
@@ -83,6 +89,7 @@ export const CheckoutButton = styled(AddToCart)`
   width: 90%;
 `;
 
+// WHEN CART IS EMPTY
 export const EmptyCart = styled.div`
   margin: 50px auto 50px auto;
 

@@ -12,6 +12,7 @@ import { useState } from "react";
 // CONTEXT HOOK
 import { CartContextProvider } from "./context/CartContext";
 
+// THUMB & PRODUCT IMAGES
 const imageSource = {
   images: [
     {
@@ -37,6 +38,7 @@ const imageSource = {
   ]
 };
 
+// THEME
 const theme = {
   'Orange': 'hsl(26, 100%, 55%)',
   'Pale orange': 'hsl(25, 100%, 94%)',
@@ -53,6 +55,7 @@ const theme = {
 function App() {
   const [showLightbox, setShowLightbox] = useState(false);
 
+  // SHOW & HIDE LIGHTBOX
   const toggleLightbox = () => {
     setShowLightbox(!showLightbox);
   };
@@ -61,11 +64,20 @@ function App() {
     <ThemeProvider theme={ theme }>
       <GlobalStyle />
       <CartContextProvider>
+
         <Container>
           <Navbar />
-          <Content imageSource={ imageSource } toggleLightbox={ toggleLightbox } showLightbox={ showLightbox } />
-          { showLightbox && <Lightbox images={ imageSource.images } toggle={ toggleLightbox } /> }
+          <Content
+            imageSource={ imageSource }
+            toggleLightbox={ toggleLightbox }
+            showLightbox={ showLightbox }
+          />
+          { showLightbox
+            &&
+            <Lightbox images={ imageSource.images } toggle={ toggleLightbox } />
+          }
         </Container>
+
       </CartContextProvider>
     </ThemeProvider>
   );

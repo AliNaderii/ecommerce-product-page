@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// WHOLE CONTENT CONTAINER
 export const StyledContent = styled.main`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -9,6 +10,7 @@ export const StyledContent = styled.main`
   margin: 70px auto 0;
   padding: 0 150px;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     grid-template-columns: 1fr;
     gap: 0;

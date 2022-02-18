@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// LIGHTBOX CONTAINER
 export const StyledLightbox = styled.div`
   position: absolute;
   top: 0;
@@ -13,11 +14,13 @@ export const StyledLightbox = styled.div`
   background-color: ${({ theme }) => theme['Black']};
   z-index: 1;
 
+  /* MEDIA QUERY */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: none;
   }
 `;
 
+// LIGHTBOX IMAGE CONTAINER
 export const ImageContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -27,6 +30,7 @@ export const ImageContainer = styled.section`
   width: 500px;
 `;
 
+// PRODCUT IMAGE
 export const Product = styled.div`
   position: relative;
 
@@ -36,6 +40,7 @@ export const Product = styled.div`
   }
 `;
 
+// THUMBNAILS CONTAINER
 export const Thumbnails = styled.div`
   margin-top: 25px;
   display: grid;
@@ -44,6 +49,7 @@ export const Thumbnails = styled.div`
   gap: 10px;
 `;
 
+// THUMBNAILS
 export const Thumb = styled.div`
   position: relative;
   
@@ -71,6 +77,7 @@ export const Thumb = styled.div`
   }
 `;
 
+// CLOSE ICON
 export const CloseIcon = styled.button`
   position: absolute;
   top: -50px;
@@ -79,6 +86,7 @@ export const CloseIcon = styled.button`
   height: 25px;
 `;
 
+// PREVIOUS BUTTON
 export const PreviousIcon = styled.button`
   position: absolute;
   top: 45%;
@@ -94,6 +102,7 @@ export const PreviousIcon = styled.button`
   }
 `;
 
+// NEXT BUTTON
 export const NextIcon = styled.button`
   position: absolute;
   top: 45%;
