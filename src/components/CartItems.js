@@ -1,7 +1,9 @@
 // CONTEXT HOOK
 import { useCartContext } from "../hooks/useCartContext";
 // STYLES
-import { StyledCartItems, Title, Summary, DeleteIcon, CheckoutButton, EmptyCart } from "../styles/CartItems.styled";
+import { StyledCartItems, Title, Summary, IconContainer, CheckoutButton, EmptyCart } from "../styles/CartItems.styled";
+// ICONS
+import { ReactComponent as DeleteIcon } from '../icon/icon-delete.svg';
 
 export default function CartItems() {
   // CONTEXT CUSTOM HOOK
@@ -27,9 +29,9 @@ export default function CartItems() {
                 Fall Limited Edition Sneakers <br />
                 $125.00 x { state.qty } <span>{ `$${125 * state.qty}.00` }</span>
               </p>
-              <DeleteIcon aria-label="delete button" onClick={ emptyCart }>
-                <img src="./images/icon-delete.svg" alt="delete icon" />
-              </DeleteIcon>
+              <IconContainer aria-label="delete button" onClick={ emptyCart }>
+                <DeleteIcon alt="delete icon" />
+              </IconContainer>
             </div>
           </Summary>
           <CheckoutButton>Checkout</CheckoutButton>

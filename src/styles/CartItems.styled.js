@@ -71,12 +71,15 @@ export const Summary = styled.div`
 `;
 
 // EMPTY CART ICON
-export const DeleteIcon = styled.button`
-    img {
-      width: 12px;
-      height: 14px;
+export const IconContainer = styled.button`
+    svg {
       border-radius: unset;
       margin-left: 15px;
+      fill: #C3CAD9;
+
+      &:hover {
+        fill: ${({ theme }) => theme['Black']};
+      }
     }
 `;
 

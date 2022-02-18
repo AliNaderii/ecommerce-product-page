@@ -1,7 +1,11 @@
 // TOOLS
 import { useState } from "react";
 // STYLES
-import { StyledLightbox, ImageContainer, Product, Thumbnails, Thumb, CloseIcon, PreviousIcon, NextIcon } from "../styles/Lightbox.styled";
+import { StyledLightbox, ImageContainer, Product, Thumbnails, Thumb, CloseButton, PrevButton, NextButton } from "../styles/Lightbox.styled";
+// ICONS
+import { ReactComponent as CloseIcon } from '../icon/icon-close.svg';
+import { ReactComponent as PrevIcon } from '../icon/icon-previous.svg';
+import { ReactComponent as NextIcon } from '../icon/icon-next.svg';
 
 export default function Lightbox({ images, toggle }) {
   // ARRAY OF PRODUCT IMAGE SOURCES
@@ -34,17 +38,17 @@ export default function Lightbox({ images, toggle }) {
         <Product>
           <img src={ productImageSrc[id] } alt='product' />
 
-          <CloseIcon onClick={ toggle }>
-            <img src="./images/icon-close.svg" alt="" />
-          </CloseIcon>
+          <CloseButton onClick={ toggle }>
+            <CloseIcon alt="colse icon" />
+          </CloseButton>
 
-          <PreviousIcon onClick={ prevImage }>
-            <img src="./images/icon-previous.svg" alt="previous icon" />
-          </PreviousIcon>
+          <PrevButton onClick={ prevImage }>
+            <PrevIcon alt="previous icon" />
+          </PrevButton>
 
-          <NextIcon onClick={ nextImage }>
-            <img src='./images/icon-next.svg' alt='next icon' />
-          </NextIcon>
+          <NextButton onClick={ nextImage }>
+            <NextIcon alt='next icon' />
+          </NextButton>
         </Product>
 
         <Thumbnails>

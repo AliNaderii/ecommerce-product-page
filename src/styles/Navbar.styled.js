@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // STYLED COMPONENTS
-import { CloseIcon } from "./Lightbox.styled";
+import { CloseButton as CloseBtn } from "./Lightbox.styled";
 
 // NAVBAR SECTION CONTAINER
 export const StyledNavbar = styled.nav`
@@ -67,12 +67,16 @@ export const SideMenu = styled.div`
 `;
 
 // CLOSE BUTTON
-export const CloseButton = styled(CloseIcon)`
+export const CloseButton = styled(CloseBtn)`
   position: relative;
   margin-right: auto;
   margin-bottom: 25px;
   top: 0;
   left: -5px;
+
+  svg {
+    fill: ${({ theme }) => theme['Very dark blue']};
+  }
 `;
 
 // SITE LOGO

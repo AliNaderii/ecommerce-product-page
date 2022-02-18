@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // STYLED COMPONENTS
-import { PreviousIcon, NextIcon } from "../styles/Lightbox.styled";
+import { PrevButton as PrevBtn, NextButton as NextBtn } from "../styles/Lightbox.styled";
 
 // IMAGE SECTION CONTAINER
 export const StyledImages = styled.section`
@@ -32,14 +32,23 @@ export const Product = styled.div`
 `;
 
 // PREVIOUS BUTTON
-export const PrevButton = styled(PreviousIcon)`
+export const PrevButton = styled(PrevBtn)`
   display: none;
   left: 0;
   margin-left: 15px;
 
-  img {
-    width: 20px;
-    height: 20px;
+  svg {
+    fill: #fff;
+    stroke: #1D2026;
+    stroke-width: 3px;
+  }
+
+  &:hover {
+    svg {
+      fill: #fff;
+      stroke: #1D2026;
+    stroke-width: 3px;
+    }
   }
 
   /* MEDIA QUERY */
@@ -49,14 +58,23 @@ export const PrevButton = styled(PreviousIcon)`
 `;
 
 // NEXT BUTTON
-export const NextButton = styled(NextIcon)`
+export const NextButton = styled(NextBtn)`
   display: none;
   right: 0;
   margin-right: 15px;
 
-  img {
-    width: 20px;
-    height: 20px;
+  svg {
+    fill: #fff;
+    stroke: #1D2026;
+    stroke-width: 3px;
+  }
+
+  &:hover {
+    svg {
+      fill: #fff;
+      stroke: #1D2026;
+      stroke-width: 3px;
+    }
   }
 
   /* MEDIA QUERY */

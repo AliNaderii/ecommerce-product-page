@@ -77,17 +77,25 @@ export const Thumb = styled.div`
   }
 `;
 
-// CLOSE ICON
-export const CloseIcon = styled.button`
+// CLOSE BUTTON
+export const CloseButton = styled.button`
   position: absolute;
   top: -50px;
   right: 0;
   width: 25px;
   height: 25px;
+
+  svg {
+    fill: #fff;
+
+    &:hover {
+      fill: ${({ theme }) => theme['Orange']};
+    }
+  }
 `;
 
 // PREVIOUS BUTTON
-export const PreviousIcon = styled.button`
+export const PrevButton = styled.button`
   position: absolute;
   top: 45%;
   left: -25px;
@@ -96,14 +104,20 @@ export const PreviousIcon = styled.button`
   height: 50px;
   width: 50px;
   
-  img {
-    width: 20px;
-    height: 20px;
+  svg {
+    fill: #fff;
+    stroke: #1D2026;
+    stroke-width: 3px;
+  }
+  &:hover {
+   svg {
+    stroke: ${({ theme }) => theme['Orange']};
+   }
   }
 `;
 
 // NEXT BUTTON
-export const NextIcon = styled.button`
+export const NextButton = styled.button`
   position: absolute;
   top: 45%;
   right: -25px;
@@ -112,9 +126,16 @@ export const NextIcon = styled.button`
   height: 50px;
   width: 50px;
 
-  img {
-    width: 20px;
-    height: 20px;
+  svg {
+    fill: #fff;
+    stroke: #1D2026;
+    stroke-width: 3px;
+  }
+
+  &:hover {
+    svg{
+      stroke: ${({ theme }) => theme['Orange']};
+    }
   }
 `;
 

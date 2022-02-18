@@ -2,6 +2,9 @@
 import { useState } from "react";
 // STYLES
 import { StyledImages, Product, Thumbnails, Thumb, PrevButton, NextButton } from "../styles/Images.styled";
+// ICONS
+import { ReactComponent as PrevIcon } from '../icon/icon-previous.svg';
+import { ReactComponent as NextIcon } from '../icon/icon-next.svg';
 
 export default function Images({ images, toggleLightbox }) {
   // ARRAY OF PRODUCT IMAGE SOURCES
@@ -33,11 +36,11 @@ export default function Images({ images, toggleLightbox }) {
       <Product onClick={ toggleLightbox }>
         <img src={ productImageSource[id] } alt="product" />
         <PrevButton onClick={ prevProductImage } aria-label='prev button'>
-          <img src="./images/icon-previous.svg" alt="previous icon" />
+          <PrevIcon alt="previous icon" />
         </PrevButton>
 
         <NextButton onClick={ nextProductImage } aria-label='next button'>
-          <img src='./images/icon-next.svg' alt='next icon' />
+          <NextIcon alt='next icon' />
         </NextButton>
       </Product>
 

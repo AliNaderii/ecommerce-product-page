@@ -7,6 +7,10 @@ import { StyledNavbar, LinksSection, Logo, StyledLinks, CartSection, Cart, Avata
 // COMPONENTS
 import CartItems from "./CartItems";
 import Links from './Links';
+// ICONS
+import { ReactComponent as CartIcon } from '../icon/icon-cart.svg';
+import { ReactComponent as Hamburgur } from '../icon/icon-menu.svg';
+import { ReactComponent as CloseIcon } from '../icon/icon-close.svg';
 
 export default function Navbar() {
   // CART ITEMS SECTION STATE
@@ -32,7 +36,7 @@ export default function Navbar() {
       {/* LINKS SECTION */ }
       <LinksSection>
         <MenuIcon aria-label='menu icon' onClick={ toggleSideMenu }>
-          <img src="./images/icon-menu.svg" alt="menu icon" />
+          <Hamburgur alt="menu icon" />
         </MenuIcon>
 
         <Logo><h1>sneakers</h1></Logo>
@@ -45,7 +49,7 @@ export default function Navbar() {
       {/* CART SECTION */ }
       <CartSection>
         <Cart aria-label="shopping cart" onClick={ toggleCartItems }>
-          <img src="./images/icon-cart.svg" alt="shopping cart" />
+          <CartIcon alt="shopping cart" />
           { state.qty !== 0 && <ItemCounter><p>{ state.qty }</p></ItemCounter> }
         </Cart>
 
@@ -58,7 +62,7 @@ export default function Navbar() {
       { showSideMenu &&
         <SideMenu>
           <CloseButton onClick={ toggleSideMenu }>
-            <img src="./images/icon-close.svg" alt="close icon" />
+            <CloseIcon alt="close icon" />
           </CloseButton>
           <Links />
         </SideMenu>

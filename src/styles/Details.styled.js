@@ -111,6 +111,7 @@ export const Counter = styled.div`
 
   button:hover {
     cursor: pointer;
+    opacity: 0.7;
   }
 
   /* MEDIA QUERY */
@@ -128,6 +129,14 @@ export const AddToCart = styled.button`
   padding: 15px;
   text-align: center;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    fill: #fff;
+  }
 
   span {
     display: inline-block;
