@@ -36,7 +36,7 @@ export default function Navbar() {
       {/* LINKS SECTION */ }
       <LinksSection>
         <MenuIcon aria-label='menu icon' onClick={ toggleSideMenu }>
-          <Hamburgur alt="menu icon" />
+          <Hamburgur />
         </MenuIcon>
 
         <Logo><h1>sneakers</h1></Logo>
