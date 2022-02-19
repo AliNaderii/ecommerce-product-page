@@ -11,11 +11,17 @@ export const StyledContent = styled.main`
   padding: 0 150px;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 0;
     width: 100%;
     margin: 0 auto;
     padding: 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    width: 100%;
   }
 `;

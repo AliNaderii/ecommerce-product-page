@@ -5,7 +5,7 @@ export const StyledLightbox = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ export const StyledLightbox = styled.div`
   z-index: 1;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 1200px) {
     display: none;
   }
 `;
@@ -28,6 +28,7 @@ export const ImageContainer = styled.section`
   align-items: center;
   margin: 50px auto 0;
   width: 500px;
+  height: 100%;
 `;
 
 // PRODCUT IMAGE
@@ -36,6 +37,7 @@ export const Product = styled.div`
 
   img {
   width: 100%;
+  height: 100%;
   border-radius: 20px;
   }
 `;

@@ -10,21 +10,26 @@ export const StyledImages = styled.section`
   align-items: center;
   margin: 0 auto;
   width: 100%;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 // PRODUCT IMAGE
 export const Product = styled.div`
   cursor: pointer;
   position: relative;
+  margin: 0 auto;
 
   img {
     width: 100%;
-    height: 90%;
     border-radius: 20px;
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     img {
       border-radius: unset;
     }
@@ -52,7 +57,7 @@ export const PrevButton = styled(PrevBtn)`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 1200px) {
     display: block;
   }
 `;
@@ -78,7 +83,7 @@ export const NextButton = styled(NextBtn)`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 1200px) {
     display: block;
   }
 `;
@@ -89,9 +94,12 @@ export const Thumbnails = styled.div`
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   gap: 5px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 1200px) {
     display: none;
   }
 `;

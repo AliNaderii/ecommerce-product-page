@@ -12,8 +12,12 @@ export const StyledDetails = styled.section`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     padding: 25px 20px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-top: 0px;
   }
 `;
 
@@ -33,13 +37,19 @@ export const Description = styled.div`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     h2 {
       font-size: 2em;
     }
 
     p {
       margin-top: 20px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    h2 {
+      font-size: 1.8em;
     }
   }
 `;
@@ -73,7 +83,7 @@ export const PriceTag = styled.div`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     display: flex;
     justify-content: space-between;
   }
@@ -88,10 +98,14 @@ export const ActionButtons = styled.div`
   width: 100%;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 20px;
     margin-bottom: 30px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-top: 15px;
   }
 `;
 
@@ -115,7 +129,7 @@ export const Counter = styled.div`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     justify-content: space-between;
     padding: 10px 20px;
   }

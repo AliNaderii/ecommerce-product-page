@@ -21,7 +21,7 @@ export const StyledCartItems = styled.div`
   z-index: 1;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     margin: 0 30px;
     top: 60px;
   }

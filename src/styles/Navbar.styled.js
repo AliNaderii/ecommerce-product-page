@@ -13,7 +13,7 @@ export const StyledNavbar = styled.nav`
   border-bottom: 1px solid ${({ theme }) => theme['Grayish blue']};
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     width: 100vw;
     height: 75px;
     border-bottom: unset;
@@ -36,7 +36,7 @@ export const MenuIcon = styled.button`
   margin: 0 15px;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 980px) {
     display: block;
   }
 `;
@@ -111,7 +111,7 @@ export const StyledLinks = styled.ul`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 980px) {
     display: none;
   }
   `;
@@ -124,7 +124,7 @@ export const CartSection = styled.div`
   align-items: center;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     margin-left: auto;
   }
 `;
@@ -140,7 +140,7 @@ export const Cart = styled.button`
   }
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     margin-right: 10px;
   }
 `;
@@ -167,7 +167,7 @@ export const Avatar = styled.img`
   margin-left: 35px;
 
   /* MEDIA QUERY */
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
     height: 35px;
     width: 35px;
     margin: 0 15px;
