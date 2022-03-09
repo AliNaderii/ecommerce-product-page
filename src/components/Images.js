@@ -58,7 +58,7 @@ export default function Images({ images }) {
         { images.map((image) => (
           <Thumb
             key={ image.id }
-            active={ activeId === image.id } >
+            active={ activeId === image.id ? 1 : 0 } >
             <img
               src={ image.thumb }
               alt="thumbnail"

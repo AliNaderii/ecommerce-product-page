@@ -1,28 +1,33 @@
+// TOOLS
+import { useState } from 'react';
 // CONTEXT HOOK
 import { useCartContext } from '../hooks/useCartContext';
 // STYLES
-import { StyledDetails, Title, Description, Text, PriceTag, ActionButtons, Counter, AddToCart } from "../styles/Details.styled";
+import { StyledDetails, Title, Text, PriceTag, ActionButtons, Counter, AddToCart } from "../styles/Details.styled";
 // ICONS
 import { ReactComponent as MinusIcon } from '../icon/icon-minus.svg';
 import { ReactComponent as PlusIcon } from '../icon/icon-plus.svg';
 import { ReactComponent as CartIcon } from '../icon/icon-cart.svg';
 
 export default function Details() {
+  const [count, setCount] = useState(0);
   // CONTEXT CUSTOM HOOK
-  const { state, dispatch } = useCartContext();
+  const { dispatch } = useCartContext();
 
   // DECREMENT && INCREMENT ITEM FUNCTIONS
   const decrementItem = () => {
-    dispatch({ type: 'DECREMENT' });
+    setCount(prevState => prevState > 0 ? prevState - 1 : 0);
   };
 
   const incrementItem = () => {
-    dispatch({ type: 'INCREMENT' });
+    setCount(prevState => prevState + 1);
   };
 
   // ADD ITEMS TO CART FUNCTION
-  const addItems = () => {
-    dispatch({ type: 'ITEMS_ADDED', payload: state.cartItems });
+  const addItems = (count) => {
+    if (count > 0) {
+      dispatch({ type: 'ITEMS_ADDED', payload: count });
+    }
   };
 
   return (
@@ -49,13 +54,13 @@ export default function Details() {
           <button aria-label="delete item" onClick={ decrementItem }>
             <MinusIcon />
           </button>
-          <span>{ state.cartItems }</span>
+          <span>{ count }</span>
           <button aria-label="add item" onClick={ incrementItem }>
             <PlusIcon />
           </button>
         </Counter>
 
-        <AddToCart aria-label="add to cart" onClick={ addItems }>
+        <AddToCart aria-label="add to cart" onClick={ () => addItems(count) }>
           <CartIcon />
           <span>Add to cart</span>
         </AddToCart>

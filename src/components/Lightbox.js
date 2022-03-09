@@ -9,7 +9,7 @@ import { ReactComponent as CloseIcon } from '../icon/icon-close.svg';
 import { ReactComponent as PrevIcon } from '../icon/icon-previous.svg';
 import { ReactComponent as NextIcon } from '../icon/icon-next.svg';
 
-export default function Lightbox({ images, toggle, prevImage, nextImage }) {
+export default function Lightbox({ images, toggle }) {
 
   // ARRAY OF PRODUCT IMAGE SOURCES
   const productImageSource = images.map(image => image.product);
@@ -59,12 +59,13 @@ export default function Lightbox({ images, toggle, prevImage, nextImage }) {
           { images.map((image) => (
             <Thumb
               key={ image.id }
-              active={ activeId === image.id } >
+              // STYLED COMPONENTS GIVES ERROR IF WE DON'T USE THIS
+              active={ activeId === image.id ? 1 : 0 }
+            >
               <img
                 src={ image.thumb }
                 alt="thumbnail"
                 onClick={ () => changeSrc(image.id) }
-                active={ activeId === image.id }
               />
             </Thumb>
           ))

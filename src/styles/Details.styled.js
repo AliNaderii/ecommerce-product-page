@@ -41,12 +41,6 @@ export const Title = styled.div`
   }
 `;
 
-// ITEM DESCRIPTION
-export const Description = styled.div`
-
-  
-`;
-
 // DESCRIPTION TEXT
 export const Text = styled.p`
   color: ${({ theme }) => theme['Dark grayish blue']};
