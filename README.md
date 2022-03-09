@@ -4,7 +4,7 @@ This is a small product page to show the product images and add it to shopping c
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://maestro-ecommerce-product-page.netlify.app/)
+- Live Site URL: (https://maestro-ecommerce-product-page.netlify.app/)
 
 ### Built with
 
