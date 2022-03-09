@@ -7,8 +7,6 @@ import { Container } from "./styles/Container";
 // COMPONENTS
 import Navbar from "./components/Navbar";
 import Content from './components/Content';
-import Lightbox from './components/Lightbox';
-import { useState } from "react";
 // CONTEXT HOOK
 import { CartContextProvider } from "./context/CartContext";
 
@@ -48,36 +46,23 @@ const theme = {
   'Light grayish blue': 'hsl(223, 64%, 98%)',
   'White': 'hsl(0, 0%, 100%)',
   'Black': 'rgba(0, 0, 0, 0.75)',
-
-  mobile: '375px'
 };
 
 function App() {
-  const [showLightbox, setShowLightbox] = useState(false);
-
-  // SHOW & HIDE LIGHTBOX
-  const toggleLightbox = () => {
-    setShowLightbox(!showLightbox);
-  };
 
   return (
     <ThemeProvider theme={ theme }>
       <GlobalStyle />
       <CartContextProvider>
-
         <Container>
+
           <Navbar />
+
           <Content
             imageSource={ imageSource }
-            toggleLightbox={ toggleLightbox }
-            showLightbox={ showLightbox }
           />
-          { showLightbox
-            &&
-            <Lightbox images={ imageSource.images } toggle={ toggleLightbox } />
-          }
-        </Container>
 
+        </Container>
       </CartContextProvider>
     </ThemeProvider>
   );

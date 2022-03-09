@@ -1,7 +1,7 @@
 // CONTEXT HOOK
 import { useCartContext } from '../hooks/useCartContext';
 // STYLES
-import { StyledDetails, Description, PriceTag, ActionButtons, Counter, AddToCart } from "../styles/Details.styled";
+import { StyledDetails, Title, Description, Text, PriceTag, ActionButtons, Counter, AddToCart } from "../styles/Details.styled";
 // ICONS
 import { ReactComponent as MinusIcon } from '../icon/icon-minus.svg';
 import { ReactComponent as PlusIcon } from '../icon/icon-plus.svg';
@@ -27,15 +27,17 @@ export default function Details() {
 
   return (
     <StyledDetails>
-      <p>SNEAKER COMPANY</p>
 
-      <Description>
+      <Title>
+        <p>SNEAKER COMPANY</p>
         <h2>Fall Limited Edition<br />Sneakers</h2>
-        <p>These low-profile sneakers are your perfect casual wear
-          companion. Featuring a durable rubber outer sole. they'll
-          withstand everything the weather can offer.
-        </p>
-      </Description>
+      </Title>
+
+      <Text>
+        These low-profile sneakers are your perfect casual wear
+        companion. Featuring a durable rubber outer sole. they'll
+        withstand everything the weather can offer.
+      </Text>
 
       <PriceTag>
         <p>$125.00 <span><strong>50%</strong></span></p>

@@ -4,8 +4,8 @@ import { CloseButton as CloseBtn } from "./Lightbox.styled";
 
 // NAVBAR SECTION CONTAINER
 export const StyledNavbar = styled.nav`
-  width: 80%;
-  height: 120px;
+  width: 100%;
+  height: 100px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -13,11 +13,11 @@ export const StyledNavbar = styled.nav`
   border-bottom: 1px solid ${({ theme }) => theme['Grayish blue']};
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
-    width: 100vw;
-    height: 75px;
+  @media (max-width: 768px) {
+    height: 50px;
     border-bottom: unset;
-    justify-content: flex-start;
+    justify-content: space-between;
+    padding-top: 10px;
   }
 `;
 
@@ -31,12 +31,10 @@ export const LinksSection = styled.div`
 // HAMBURGER ICON
 export const MenuIcon = styled.button`
   display: none;
-  height: 100%;
-  width: 10%;
-  margin: 0 15px;
+  margin: 7px 15px 0;
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 980px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
@@ -81,37 +79,35 @@ export const CloseButton = styled(CloseBtn)`
 
 // SITE LOGO
 export const Logo = styled.div`
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 20px;
   color: ${({ theme }) => theme['Very dark blue']};
+  display: flex;
 `;
 
 // LINKS
-export const StyledLinks = styled.ul`
-  margin-left: 35px;
+export const StyledLinks = styled.div`
+  margin-left: 45px;
   height: 100%;
-
-  li {
-    display: inline-block;
-    margin: 0 20px;
-    height: 100%;
-  }
+  display: flex;
+  gap: 30px;
+  align-items: center;
   
   a {
+    color: ${({ theme }) => theme['Dark grayish blue']};
     display: flex;
     align-items: center;
-    color: ${({ theme }) => theme['Dark grayish blue']};
     height: 100%;
     
     &:hover {
-      border-bottom: 5px solid ${({ theme }) => theme['Orange']};
+      border-bottom: 3px solid ${({ theme }) => theme['Orange']};
       color: ${({ theme }) => theme['Black']};
       font-weight: 700;
+      margin-top: 4px;
     }
   }
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 980px) {
+  @media (max-width: 768px) {
     display: none;
   }
   `;
@@ -140,7 +136,7 @@ export const Cart = styled.button`
   }
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
+  @media (max-width: 768px) {
     margin-right: 10px;
   }
 `;
@@ -167,7 +163,7 @@ export const Avatar = styled.img`
   margin-left: 35px;
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
+  @media (max-width: 768px) {
     height: 35px;
     width: 35px;
     margin: 0 15px;

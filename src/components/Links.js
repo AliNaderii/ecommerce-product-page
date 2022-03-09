@@ -1,21 +1,15 @@
 export default function Links() {
   return (
     <>
-      <li>
-        <a href="#hello">Collections</a>
-      </li>
-      <li>
-        <a href="#hello">Men</a>
-      </li>
-      <li>
-        <a href="#hello">Women</a>
-      </li>
-      <li>
-        <a href="#hello">About</a>
-      </li>
-      <li>
-        <a href="#hello">Contact</a>
-      </li>
+      <a href="#hello">Collections</a>
+
+      <a href="#hello">Men</a>
+
+      <a href="#hello">Women</a>
+
+      <a href="#hello">About</a>
+
+      <a href="#hello">Contact</a>
     </>
   );
 }

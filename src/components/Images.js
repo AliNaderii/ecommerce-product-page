@@ -5,8 +5,17 @@ import { StyledImages, Product, Thumbnails, Thumb, PrevButton, NextButton } from
 // ICONS
 import { ReactComponent as PrevIcon } from '../icon/icon-previous.svg';
 import { ReactComponent as NextIcon } from '../icon/icon-next.svg';
+// COMPOENENTS
+import Lightbox from "./Lightbox";
 
-export default function Images({ images, toggleLightbox }) {
+export default function Images({ images }) {
+  const [showLightbox, setShowLightbox] = useState(false);
+
+  // SHOW & HIDE LIGHTBOX
+  const toggleLightbox = () => {
+    setShowLightbox(!showLightbox);
+  };
+
   // ARRAY OF PRODUCT IMAGE SOURCES
   const productImageSource = images.map(image => image.product);
 
@@ -14,7 +23,7 @@ export default function Images({ images, toggleLightbox }) {
   const [id, setId] = useState(0);
 
   // ACTIVE THUMBNAIL IMAGE
-  const [activeId, setActiveId] = useState();
+  const [activeId, setActiveId] = useState(1);
 
   // CHANGE IMAGE WITH CLICKING ON THUMBS
   const changeSrc = (id) => {
@@ -33,8 +42,9 @@ export default function Images({ images, toggleLightbox }) {
 
   return (
     <StyledImages>
-      <Product onClick={ toggleLightbox }>
-        <img src={ productImageSource[id] } alt="product" />
+      <Product >
+        <img src={ productImageSource[id] } alt="product" onClick={ toggleLightbox } />
+
         <PrevButton onClick={ prevProductImage } aria-label='prev button'>
           <PrevIcon />
         </PrevButton>
@@ -45,22 +55,25 @@ export default function Images({ images, toggleLightbox }) {
       </Product>
 
       <Thumbnails>
-        { images.map((image, index) => (
-          <Thumb key={ image.id }>
+        { images.map((image) => (
+          <Thumb
+            key={ image.id }
+            active={ activeId === image.id } >
             <img
               src={ image.thumb }
               alt="thumbnail"
-              key={ index }
               onClick={ () => changeSrc(image.id) }
             />
-            {
-              activeId === image.id &&
-              <div key={ image.id }></div>
-            }
           </Thumb>
         ))
         }
       </Thumbnails>
+
+      { showLightbox
+        &&
+        <Lightbox images={ images } toggle={ toggleLightbox } prevImage={ prevProductImage } nextImage={ nextProductImage } />
+      }
+
     </StyledImages>
   );
 }

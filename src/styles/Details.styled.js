@@ -3,59 +3,66 @@ import styled from "styled-components";
 // ITEM DETAILS CONTAINER
 export const StyledDetails = styled.section`
   margin: 0 auto;
-  padding-top: 25px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+  width: 450px;
+
+  /* MEDIA QUERY */
+  @media (max-width: 768px) {
+    padding: 0 25px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+`;
+
+// TITLE
+export const Title = styled.div`
 
   p {
     color: ${({ theme }) => theme['Orange']};
+    margin-bottom: 15px;
+    font-size: 14px;
     font-weight: 700;
   }
 
-  /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
-    padding: 25px 20px;
+  h2 {
+    font-size: 30px;
+    line-height: 1.2;
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
-    padding-top: 0px;
+  @media (max-width: 768px) {
+    p {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
   }
 `;
 
 // ITEM DESCRIPTION
 export const Description = styled.div`
-  margin-top: 20px;
 
-  h2 {
-    font-size: 2.2em;
-    line-height: 1.2;
-  }
-  p {
-    color: ${({ theme }) => theme['Dark grayish blue']};
-    margin: 30px 0 20px 0;
+  
+`;
 
-    font-weight: 400;
-  }
+// DESCRIPTION TEXT
+export const Text = styled.p`
+  color: ${({ theme }) => theme['Dark grayish blue']};
+  margin-top: 30px;
+  font-weight: 400;
 
-  /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
-    h2 {
-      font-size: 2em;
-    }
-
-    p {
-      margin-top: 20px;
-    }
+  @media (max-width: 768px) {
+    margin-top: 20px;
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
-    h2 {
-      font-size: 1.8em;
-    }
-  }
 `;
 
 // ITEM PRICE TAG
 export const PriceTag = styled.div`
+  margin: 30px 0;
+
   p {
     display: flex;
     align-items: center;
@@ -68,7 +75,7 @@ export const PriceTag = styled.div`
       align-items: center;
       height: 25px;
       font-size: 16px;
-      margin-left: 20px;
+      margin-left: 15px;
       padding: 2px 10px;
       background-color: ${({ theme }) => theme['Pale orange']};
       border-radius: 10px;
@@ -83,7 +90,7 @@ export const PriceTag = styled.div`
   }
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
+  @media (max-width: 768px) {
     display: flex;
     justify-content: space-between;
   }
@@ -94,17 +101,17 @@ export const ActionButtons = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
-  margin-top: 35px;
   width: 100%;
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 20px;
     margin-bottom: 30px;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
+    grid-template-columns: 1fr 2fr;
     margin-top: 15px;
   }
 `;
@@ -137,7 +144,6 @@ export const Counter = styled.div`
 
 // ADD ITEMS TO CART BUTTON
 export const AddToCart = styled.button`
-  justify-self: stretch;
   background-color: ${({ theme }) => theme['Orange']};
   border-radius: 10px;
   padding: 15px;

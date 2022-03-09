@@ -4,34 +4,32 @@ import { PrevButton as PrevBtn, NextButton as NextBtn } from "../styles/Lightbox
 
 // IMAGE SECTION CONTAINER
 export const StyledImages = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
-  width: 100%;
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    justify-content: flex-start;
-    align-items: flex-start;
+  width: 450px;
+  @media (max-width: 425px) {
+    width: 100%;
   }
 `;
 
 // PRODUCT IMAGE
 export const Product = styled.div`
-  cursor: pointer;
-  position: relative;
-  margin: 0 auto;
 
-  img {
-    width: 100%;
-    border-radius: 20px;
-  }
+    img {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 768px) {
+  @media (max-width: 768px) {
+
     img {
       border-radius: unset;
+      height: 100%;
     }
   }
 `;
@@ -57,7 +55,7 @@ export const PrevButton = styled(PrevBtn)`
   }
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 1200px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
@@ -83,23 +81,21 @@ export const NextButton = styled(NextBtn)`
   }
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 1200px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
 
 // THUMBNAILS SECTION CONTAINER
 export const Thumbnails = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  gap: 5px;
-  text-align: center;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   width: 100%;
+  gap: 30px;
+  margin: 20px auto;
 
   /* MEDIA QUERY */
-  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: 1200px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -107,28 +103,19 @@ export const Thumbnails = styled.div`
 // THUMBNAILS
 export const Thumb = styled.div`
   position: relative;
+  width: 110px;
+  height: 90px;
+  outline: ${({ active }) => active ? `4px solid hsl(26, 100%, 55%)` : 'unset'};
+  border-radius: 15px;
+  overflow: hidden;
+  
   img {
-    width: 100px;
-    height: 100%;
-    border-radius: 20px;
+  width: 100%;
+  opacity: ${({ active }) => active ? `0.6` : 'unset'};
 
     &:hover {
-      cursor: pointer;
-      opacity: 0.6;
-    }
+    cursor: pointer;
+    opacity: 0.6;
   }
-
-  div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    outline: 3px solid ${({ theme }) => theme['Orange']};
-    overflow: hidden;
-    border-radius: 20px;
-
-  }
+}
 `;
-
