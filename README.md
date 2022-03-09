@@ -1,9 +1,12 @@
-# ecommerce-product-page
+## Overview
 
-A product page built with React and styled-components
+This is a small product page to show the product images and add it to shopping cart.
 
-<!-- MAIN CONTAINER -->
+### Links
 
-S
+- Live Site URL: [Add live site URL here](https://maestro-ecommerce-product-page.netlify.app/)
 
-<!-- MAIN CONTAINER -->
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
