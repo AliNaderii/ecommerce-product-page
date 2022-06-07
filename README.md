@@ -18,8 +18,8 @@ This is a small product page to show a product's images and add it to shopping c
 
 1. Clone from Github
 
- - git clone https://github.com/AliNaderii/admin-dashboard.git
-
+ - git clone https://github.com/AliNaderii/ecommerce-product-page.git 
+ 
 2. Run `npm install` or `yarn install`
 
  - This will install both run-time project dependencies and developer tools listed in package.json file.
