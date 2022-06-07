@@ -3,11 +3,12 @@
 This is a small product page to show a product's images and add it to shopping cart.
 
 ## Features
-- See the images of the product and change the image on click
-- See the images with full size
-- Increment/decrement the product amount
-- Add the product to shopping cart
-- See the details of shopping cart and the total cost
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
 
 ## Built with
 - React.js
